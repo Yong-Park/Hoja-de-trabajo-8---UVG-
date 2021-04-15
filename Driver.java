@@ -1,12 +1,14 @@
 public class Driver{
     public static void main (String[] args){
         VectorHeap<String> vh = new VectorHeap<>();
-        vh.add("B");
-        vh.add("A");
-        vh.add("C");
-        vh.add("E");
-        vh.add("D");
+        vh.add("Baba");
+        vh.add("Apple");
+        vh.add("Coco");
+        vh.add("Acid");
+        vh.add("Elephant");
 
-        System.out.println(vh.data);
+        do{
+            System.out.println(vh.getFirst());
+        }while(vh.isEmpty()==false);
     }
 }

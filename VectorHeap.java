@@ -65,6 +65,7 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueueFunctio
 	{
 		data.add(value);
 		percolateUp(data.size()-1);
+        pq.add(value);
 	}
 
 	protected void pushDownRoot(int root)
@@ -115,24 +116,29 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueueFunctio
     @Override
     public E getFirst() {
         // TODO Auto-generated method stub
-        return null;
+        E valor = pq.poll();
+        return valor;
     }
 
     @Override
     public boolean isEmpty() {
         // TODO Auto-generated method stub
-        return false;
+        if(pq.size()==0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     @Override
     public int size() {
         // TODO Auto-generated method stub
-        return 0;
+        return pq.size();
     }
 
     @Override
     public void clear() {
         // TODO Auto-generated method stub
-        
+        pq.clear();
     }
 }

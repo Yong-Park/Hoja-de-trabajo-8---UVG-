@@ -27,12 +27,15 @@ public class Driver{
                 System.out.println("No se encontro el archivo");
                 e.printStackTrace();
             }
-        //ingresar los datos
+        //ingresar los datos y mostrarlos
+        System.out.println("Pacientes antes de ser ordenados por prioridad");
         VectorHeap<String> vh = new VectorHeap<>();
         for(int i=0; i<dic.size();i++){
+            System.out.println(dic.get(i));
             vh.add(dic.get(i).get(2));
         }
         //mostrar los pacientes ya ordenados segun la prioridad
+        System.out.println("Pacientes despues de ser ordenados por prioridad");
         do{
             String prioridad =vh.getFirst();
             for(int i=0;i<dic.size();i++){

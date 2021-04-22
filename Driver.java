@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Driver{
     public static ArrayList<ArrayList<String>> dic = new ArrayList<ArrayList<String>>();
     public static void main (String[] args){
+        Paciente pac = new Paciente();
         //lectura del archivo txt
         Scanner scanner = new Scanner(System.in);
             //lectura del diccionario
@@ -40,7 +41,7 @@ public class Driver{
             String prioridad =vh.getFirst();
             for(int i=0;i<dic.size();i++){
                 if(dic.get(i).contains(prioridad)){
-                    System.out.println(dic.get(i));
+                    pac.fichaPaciente(dic.get(i));
                 }
             }
         }while(vh.isEmpty()==false);

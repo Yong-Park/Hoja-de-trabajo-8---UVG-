@@ -47,8 +47,9 @@ public class Driver{
             }
         }while(vh.isEmpty()==false);
         System.out.println("Pacientes despues de ser ordenados por el VectorHeap");
+        
         for(int j=0;j<dic.size();j++){
-            String prioridad =vh.imprimir();
+            String prioridad=vh.getVector().toString();
             for(int i=0;i<dic.size();i++){
                 if(dic.get(i).contains(prioridad)){
                     System.out.println(dic.get(i));

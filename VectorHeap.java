@@ -115,15 +115,35 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueueFunctio
 		if (data.size() > 1) pushDownRoot(0);
 		return minVal;
 	}
-	public E imprimir(){
-		E valor = data.get(0);
-		data.remove(0);
+	public E getVector(){
+		int num = sizeData();
+		for(int i=0; i<num; i++){
+			E first = getFirstData();
+			removeData();
+			if(sizeData() !=0){
+				percolateUp(data.size()-1);
+				pushDownRoot(0);
+			}
+			return first;
+		}
+		return null;
+	}
+	public void removeData(){
+		data.remove(getFirstData());
+	}
+	
 
-		return valor;
+	public int sizeData(){
+		return data.size();
+	}
+
+	public E getFirstData(){
+		return data.firstElement();
 	}
 
     @Override
     public E getFirst() {
+		System.out.println(pq);
         // TODO Auto-generated method stub
         E valor = pq.poll();
         return valor;

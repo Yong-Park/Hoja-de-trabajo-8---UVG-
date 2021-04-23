@@ -2,3 +2,5 @@ Juan Perez, fractura de pierna, C
 Maria Ramirez, apendicitis, A
 Lorenzo Toledo, chikunguya, E
 Carmen Sarmientos, dolores de parto, B
+Lorenzo Toledo, calvo, T
+Carmen Sarmientos, dolores de panza, D

@@ -23,6 +23,11 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueueFunctio
 			add(v.get(i));
 		}
 	}
+	
+	/** 
+	 * @param i
+	 * @return int
+	 */
 	protected static int parent(int i)
 	// pre: 0 <= i < size
 	// post: returns parent of node at location i
@@ -30,6 +35,11 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueueFunctio
 		return (i-1)/2;
 	}
 
+	
+	/** 
+	 * @param i
+	 * @return int
+	 */
 	protected static int left(int i)
 	// pre: 0 <= i < size
 	// post: returns index of left child of node at location i
@@ -37,6 +47,11 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueueFunctio
 		return 2*i+1;
 	}
 
+	
+	/** 
+	 * @param i
+	 * @return int
+	 */
 	protected static int right(int i)
 	// pre: 0 <= i < size
 	// post: returns index of right child of node at location i
@@ -44,6 +59,10 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueueFunctio
 		return (2*i+1) + 1;
 	}
 
+	
+	/** 
+	 * @param leaf
+	 */
 	protected void percolateUp(int leaf)
 	// pre: 0 <= leaf < size
 	// post: moves node at index leaf up to appropriate position
@@ -60,6 +79,10 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueueFunctio
 		data.set(leaf,value);
 	}
 
+	
+	/** 
+	 * @param value
+	 */
 	public void add(E value)
 	// pre: value is non-null comparable
 	// post: value is added to priority queue
@@ -71,6 +94,10 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueueFunctio
         pq.add(value);
 	}
 
+	
+	/** 
+	 * @param root
+	 */
 	protected void pushDownRoot(int root)
 	// pre: 0 <= root < size
 	// post: moves node at index root down
@@ -105,6 +132,10 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueueFunctio
 		}
 	}
 
+	
+	/** 
+	 * @return E
+	 */
 	public E remove()
 	// pre: !isEmpty()
 	// post: returns and removes minimum value from queue
@@ -115,6 +146,10 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueueFunctio
 		if (data.size() > 1) pushDownRoot(0);
 		return minVal;
 	}
+	
+	/** 
+	 * @return E
+	 */
 	public E getVector(){
 		int num = sizeData();
 		for(int i=0; i<num; i++){
@@ -133,15 +168,27 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueueFunctio
 	}
 	
 
+	
+	/** 
+	 * @return int
+	 */
 	public int sizeData(){
 		return data.size();
 	}
 
+	
+	/** 
+	 * @return E
+	 */
 	public E getFirstData(){
 		return data.firstElement();
 	}
 
-    @Override
+    
+	/** 
+	 * @return E
+	 */
+	@Override
     public E getFirst() {
 		System.out.println(pq);
         // TODO Auto-generated method stub
@@ -149,7 +196,11 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueueFunctio
         return valor;
     }
 
-    @Override
+    
+	/** 
+	 * @return boolean
+	 */
+	@Override
     public boolean isEmpty() {
         // TODO Auto-generated method stub
         if(pq.size()==0){
@@ -159,7 +210,11 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueueFunctio
         }
     }
 
-    @Override
+    
+	/** 
+	 * @return int
+	 */
+	@Override
     public int size() {
         // TODO Auto-generated method stub
         return pq.size();

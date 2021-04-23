@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 
 public class Paciente {
+    
+    /** 
+     * @param data
+     */
     public void fichaPaciente(ArrayList<String> data){
         //imprimir la ficha de cada cliente
         System.out.println("_______________________________");

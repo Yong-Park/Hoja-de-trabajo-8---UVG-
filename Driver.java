@@ -5,6 +5,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Driver{
     public static ArrayList<ArrayList<String>> dic = new ArrayList<ArrayList<String>>();
+    
+    /** 
+     * @param args
+     */
     public static void main (String[] args){
         Paciente pac = new Paciente();
         //lectura del archivo txt

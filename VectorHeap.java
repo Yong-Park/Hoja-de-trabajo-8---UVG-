@@ -66,6 +66,8 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueueFunctio
 	{
 		data.add(value);
 		percolateUp(data.size()-1);
+		pushDownRoot(0);
+		
         pq.add(value);
 	}
 
@@ -112,6 +114,12 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueueFunctio
 		data.setSize(data.size()-1);
 		if (data.size() > 1) pushDownRoot(0);
 		return minVal;
+	}
+	public E imprimir(){
+		E valor = data.get(0);
+		data.remove(0);
+
+		return valor;
 	}
 
     @Override

@@ -1,4 +1,4 @@
-//Yong Bum Park 20117
+/*Yong Bum Park 20117*/
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -35,8 +35,9 @@ public class Driver{
             System.out.println(dic.get(i));
             vh.add(dic.get(i).get(2));
         }
+        
         //mostrar los pacientes ya ordenados segun la prioridad
-        System.out.println("Pacientes despues de ser ordenados por prioridad");
+        System.out.println("Pacientes despues de ser ordenados por prioridad con priority queue");
         do{
             String prioridad =vh.getFirst();
             for(int i=0;i<dic.size();i++){
@@ -45,5 +46,14 @@ public class Driver{
                 }
             }
         }while(vh.isEmpty()==false);
+        System.out.println("Pacientes despues de ser ordenados por el VectorHeap");
+        for(int j=0;j<dic.size();j++){
+            String prioridad =vh.imprimir();
+            for(int i=0;i<dic.size();i++){
+                if(dic.get(i).contains(prioridad)){
+                    System.out.println(dic.get(i));
+                }
+            }
+        }
     }
 }
